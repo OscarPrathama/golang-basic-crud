@@ -1,0 +1,30 @@
+{{ template "main" .}}
+
+{{ define "content" }}
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-12">
+                <h3 class="mb-3">ID User : {{ .Id }}</h3>
+
+                <form method="" action="">
+                    <input type="hidden" name="uid" value="{{ .Id }}" />
+                    <table cellpadding="8">
+                        <tr>
+                            <td>Name</td>
+                            <td><input type="text" class="form-control" name="name" value="{{ .Name }}" /></td>
+                        </tr>
+                        <tr>
+                            <td>City</td>
+                            <td><input type="text" class="form-control" name="city" value="{{ .City }}" /></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" >
+                                <a href="/users/edit?id={{ .Id }}">Edit User -></a>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </div>
+{{ end }}
